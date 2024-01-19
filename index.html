@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="webpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header class="minimalist-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Logo -->
+            <div class="col-6">
+                <h1 class="logo"> &lt; Meet Earl &gt; </h1>
+            </div>
+            <!-- Navigation -->
+            <div class="col-6 text-end">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                              <li class="nav-item">
+                                <a class="nav-link" href="#about-me" onclick="openAboutMePopup()">About Me</a>
+                            </li>
+                            <script>
+                              function openAboutMePopup() {
+                                  // Close any existing popups
+                                  closeAllPopups();
+                                  
+                                  // Show the "About Me" popup
+                                  document.getElementById('popup3').style.display = 'flex';
+                              }
+                          
+                             
+                          
+                              function closePopup(popupId) {
+                                  // Close the specified popup
+                                  document.getElementById(popupId).style.display = 'none';
+                              }
+                          </script>
+                          
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="https://github.com/MizuOnShore" target="_blank">Projects</a>
+                              </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#contact-me" onclick="openContactMePopup()">Contact Me</a>
+                              </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+  
+  
+
+    <div class="inner-menu">
+        <div class="logo-name">
+            <ul>
+                <li>
+                    <a>Hello I'm </a>
+                    <a class="My-Name">Earl Ugalino </a>
+                    <br>
+                    <p class="intro">A Student, Bartender, and a Programmer</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="my-wrapper">
+        <div class="hover-container">
+            <div class="hover-items">
+                <p class="choose">Which one would you like to meet?</p>
+                <div class="hover-buttons">
+                    <li class="item1" onclick="showInformation('bartender-information')">
+                        <a href="#bartender-information">
+                            <img class="bartender" src="ck.png" alt="">
+                        </a>
+                    </li>
+                    <li class="item2" onclick="showInformation('Programmer-information')">
+                        <a href="#Programmer-information">
+                            <img class="me" src="laptop-icon-29-removebg-preview.png" alt="">
+                            
+                        </a>
+                    </li>
+                    <li class="item3" onclick="showInformation('Earl-information')">
+                        <a href="#Earl-information">
+                            <img class="programmer" src="827.png" alt="">
+                            
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+        </div>
+
+      
+
+        <!--image continer-->
+        <div class="image-container">
+          <button class="arrow left" onclick="scrollImage(-1)">&#10094;</button>
+          <div class="image-slider">
+              <!-- Add your images here, each within a div -->
+              <div class="image-item">
+                  <img src="programmer.gif" alt="Image 1">
+              </div>
+              <div class="image-item">
+                <img src="bartender1.jpg" alt="Image 1">
+            </div>
+            <div class="image-item">
+              <img src="programmer.gif" alt="Image 1">
+          </div>
+          <div class="image-item">
+            <img src="bartender1.jpg" alt="Image 1">
+        </div>
+              
+          </div>
+          <button class="arrow right" onclick="scrollImage(1)">&#10095;</button>
+      </div>
+
+      <script>
+        function scrollImage(direction) {
+            const container = document.querySelector('.image-slider');
+            const scrollAmount = container.clientWidth; // One image at a time
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+    
+
+    <!--Bottom Mid-->
+
+    <div class="bottom-menu">
+      <div id="bartender-information" class="bartender-information">
+          <p>The Bartender</p>
+      </div>
+      <div class="Con1">
+          <img src="bar-blur.jpg" onclick="openPopup('popup1')">
+          <div class="design-content">
+              <h2>Unlocking Flavor Symphony</h2>
+              <p>Embark on a journey where every cocktail is a masterpiece. Join me in the artistry of mixology, where craft meets creativity and flavors dance in harmony.</p>
+              <button class="button-design" onclick="openPopup('popup1')">More Information</button>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Second bottom-menu section -->
+  <div class="bottom-menu">
+      <div id="Programmer-information" class="Programmer-information">
+          <p>The Programmer</p>
+      </div>
+      <div class="Con1">
+          <img src="program-blur.jpg" onclick="openPopup('popup2')">
+          <div class="design-content">
+              <h2>Crafting Digital Adventures</h2>
+              <p>Step into the realm of programming, where lines of code weave tales of innovation. Explore my projects and collaborations, and let's code our way through the digital landscape.</p>
+              <button onclick="openPopup('popup2')">More Information</button>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Third bottom-menu section -->
+  <div class="bottom-menu">
+      <div id="Earl-information" class="Earl-information">
+          <p>Just Earl</p>
+      </div>
+      <div class="Con1">
+          <img src="me-blur.jpg" onclick="openPopup('popup3')">
+          <div class="design-content">
+              <h2>The Odyssey of Earl</h2>
+              <p>Beyond the realms of code and cocktails, join me in the adventure of life. Embrace the thrill of biking, engage in frisbee matches, and let's make every moment an unforgettable chapter.</p>
+              <button onclick="openPopup('popup3')">More Information</button>
+          </div>
+      </div>
+  </div>
+  
+    <script>
+      function openPopup(popupId) {
+        document.getElementById(popupId).style.display = "flex";
+      }
+  
+      function closePopup(popupId) {
+        document.getElementById(popupId).style.display = "none";
+      }
+    </script>
+
+    <!-- Popups -->
+    <div class="popup" id="popup1">
+      <div class="popup-content">
+          <div class="exit-button" onclick="closePopup('popup1')">x</div>
+          <h3>Embark on the Art of Mixology</h3>
+          <p>
+              Discover the world of mixology, where the craft and creativity of bartending come together to create extraordinary experiences.
+          </p>
+          <p>
+              Being a bartender is more than just pouring drinks; it's an art form that combines flavors, aesthetics, and a passion for creating memorable moments. Dive into my journey of mixology, where each cocktail is a masterpiece.
+          </p>
+  
+          
+          <div class="button-container">
+              <a class="custom-btn" href="https://www.instagram.com/floraginbar/" target="_blank">Explore Flora Gin Bar</a>
+              <a class="custom-btn" href="https://www.instagram.com/recraft.bar/" target="_blank">Discover Re-Craft Bar</a>
+              <a class="custom-btn" href="https://www.instagram.com/bar55.ph/e" target="_blank">Experience Bar 55</a>
+          </div>
+  
+          <p class="closing-statement">
+              As I share the artistry of mixology, let me take you to the best bar I've ever experienced—a place where passion meets perfection. Join me on this journey of flavors and creativity!
+          </p>
+      </div>
+  </div>
+  
+  
+
+  <div class="popup" id="popup2">
+    <div class="popup-content">
+      <div class="exit-button" onclick="closePopup('popup2')">x</div>
+      <h3>My Programming Projects</h3>
+      <p>
+        Explore some of my personal projects and access my GitHub account to see more!
+      </p>
+      <p>
+        Check out my latest repositories, contributions, and collaborations on GitHub. Feel free to connect and explore the exciting world of coding with me!
+      </p>
+      <a class="github-link" href="https://github.com/MizuOnShore" target="_blank">Visit My GitHub</a>
+      <!-- Add more project-related content or information as needed -->
+      
+    </div>
+  </div>
+
+  <div class="popup" id="popup3">
+    <div class="popup-content about-me">
+        <div class="exit-button" onclick="closePopup('popup3')">x</div>
+        <h3 class="animate__animated animate__fadeIn">Discover My Journey</h3>
+        <p class="animate__animated animate__fadeIn">
+            Hey there! I'm Earl, a computer science student with a passion for coding and creativity. During my first year in college, I explored the dynamic world of bartending, blending my technical skills with a touch of mixology.
+        </p>
+        <p class="animate__animated animate__fadeIn">
+            When I'm not immersed in code, you'll find me enjoying the thrill of biking and engaging in friendly frisbee matches. Life is an adventure, and I'm here to embrace every bit of it!
+        </p>
+
+        
+        <div class="social-links mt-4 animate__animated animate__fadeInUp">
+            <a href="https://www.facebook.com/ea.ugalino/" target="_blank" class="btn btn-outline-primary btn-lg mr-2">Facebook</a>
+            <a href="https://www.instagram.com/eaugalino/" target="_blank" class="btn btn-outline-danger btn-lg mr-2">Instagram</a>
+            <a href="https://twitter.com/YourTwitterHandle" target="_blank" class="btn btn-outline-info btn-lg">Twitter</a>
+        </div>
+    </div>
+</div>
+<!-- Add this to your existing HTML structure -->
+<div class="popup" id="popup4">
+  <div class="popup-content contact-me">
+      <div class="exit-button" onclick="closePopup('popup4')">x</div>
+      <h3 class="animate__animated animate__fadeIn">Get in Touch</h3>
+      <form>
+          <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Type your message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
+</div>
+
+
+<script>
+  function openContactMePopup() {
+    
+      closeAllPopups();
+      document.getElementById('popup4').style.display = 'flex';
+  }
+
+  function closeAllPopups() {
+      var popups = document.querySelectorAll('.popup');
+      popups.forEach(function(popup) {
+          popup.style.display = 'none';
+      });
+  }
+  function closePopup(popupId) {
+      document.getElementById(popupId).style.display = 'none';
+  }
+</script>
+
+
+<!--Bottom Mid-->
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>Email: ea.uglino@gmail.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Me</h3>
+            <p>Twitter</p>
+            <p>Facebook</p>
+            <p>Instagram</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
